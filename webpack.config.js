@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        help: /\.html$/i, // 新增：匹配 .html 文件
+        test: /\.html$/i, // 新增：匹配 .html 文件
         loader: 'html-loader', // 新增：使用 html-loader 处理
         options: {
           // esModule: false, // 如果导入时遇到问题，可以尝试取消注释此行
