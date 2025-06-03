@@ -43,8 +43,7 @@ main = "src/index.js"
 #TARGET_UPSTREAM = ""
 
 # wrangler.toml (wrangler v3.88.0^)
-[observability.logs]
-enabled = true
+
 
 
 #[env.production]
@@ -61,6 +60,7 @@ routes = [
 ]
 
 #[env.production.vars]
+[vars]
 MODE = "production"
 CUSTOM_DOMAIN = "om00.com"
 TARGET_UPSTREAM = ""
@@ -69,3 +69,5 @@ TARGET_UPSTREAM = ""
 #name = "cloudflare-docker-proxy-staging"
 #route = { pattern = "docker-staging.om00.com", custom_domain = true }
 
+[observability.logs]
+enabled = true
