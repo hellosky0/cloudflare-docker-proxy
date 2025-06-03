@@ -51,13 +51,13 @@ enabled = true
 name = "cloudflare-docker-proxy"
 main = "src/index.js"
 routes = [
-  { pattern = "docker.mydomain.com", custom_domain = true },
-  { pattern = "quay.mydomain.com", custom_domain = true },
-  { pattern = "gcr.mydomain.com", custom_domain = true },
-  { pattern = "k8s-gcr.mydomain.com", custom_domain = true },
-  { pattern = "k8s.mydomain.com", custom_domain = true },
-  { pattern = "ghcr.mydomain.com", custom_domain = true },
-  { pattern = "cloudsmith.mydomain.com", custom_domain = true },
+  { pattern = "docker.om00.com", custom_domain = true },
+  { pattern = "quay.om00.com", custom_domain = true },
+  { pattern = "gcr.om00.com", custom_domain = true },
+  { pattern = "k8s-gcr.om00.com", custom_domain = true },
+  { pattern = "k8s.om00.com", custom_domain = true },
+  { pattern = "ghcr.om00.com", custom_domain = true },
+  { pattern = "cloudsmith.om00.com", custom_domain = true },
 ]
 
 [env.production.vars]
