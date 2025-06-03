@@ -1,5 +1,5 @@
-#name = "cloudflare-docker-proxy"
-#compatibility_date = "2023-12-01"
+name = "cloudflare-docker-proxy"
+compatibility_date = "2023-12-01"
 main = "src/index.js"
 
 #[dev]
@@ -48,7 +48,7 @@ enabled = true
 
 
 [env.production]
-name = "cloudflare-docker-proxy"
+#name = "cloudflare-docker-proxy"
 #main = "src/index.js"
 routes = [
   { pattern = "docker.om00.com", custom_domain = true },
