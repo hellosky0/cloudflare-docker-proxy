@@ -1,22 +1,22 @@
-name = "cloudflare-docker-proxy"
-compatibility_date = "2023-12-01"
-main = "src/index.js"
+#name = "cloudflare-docker-proxy"
+#compatibility_date = "2023-12-01"
+#main = "src/index.js"
 
-[dev]
-ip = "0.0.0.0"
-port = 8787
-local_protocol = "http"
+#[dev]
+#ip = "0.0.0.0"
+#port = 8787
+#local_protocol = "http"
 
 #[env.vars]
 #CUSTOM_DOMAIN = "om00.com"
 
-[vars]
-CUSTOM_DOMAIN = "om00.com"
+#[vars]
+#CUSTOM_DOMAIN = "om00.com"
 
-[env.dev.vars]
-MODE = "debug"
-TARGET_UPSTREAM = "https://registry-1.docker.io"
-CUSTOM_DOMAIN = "exmaple.com"
+#[env.dev.vars]
+#MODE = "debug"
+#TARGET_UPSTREAM = "https://registry-1.docker.io"
+#CUSTOM_DOMAIN = "exmaple.com"
 
 [env.production]
 name = "cloudflare-docker-proxy"
@@ -30,22 +30,42 @@ routes = [
   { pattern = "cloudsmith.om00.com", custom_domain = true },
 ]
 
-[env.production.vars]
-MODE = "production"
-TARGET_UPSTREAM = ""
+#[env.production.vars]
+#MODE = "production"
+#TARGET_UPSTREAM = ""
 
-[env.staging]
-name = "cloudflare-docker-proxy-staging"
+#[env.staging]
+#name = "cloudflare-docker-proxy-staging"
 # route = { pattern = "docker-staging.libcuda.so", custom_domain = true }
 
-[env.staging.vars]
-MODE = "staging"
-TARGET_UPSTREAM = ""
+#[env.staging.vars]
+#MODE = "staging"
+#TARGET_UPSTREAM = ""
 
 # wrangler.toml (wrangler v3.88.0^)
 [observability.logs]
 enabled = true
 
 
+[env.production]
+name = "cloudflare-docker-proxy"
+main = "src/index.js"
+routes = [
+  { pattern = "docker.mydomain.com", custom_domain = true },
+  { pattern = "quay.mydomain.com", custom_domain = true },
+  { pattern = "gcr.mydomain.com", custom_domain = true },
+  { pattern = "k8s-gcr.mydomain.com", custom_domain = true },
+  { pattern = "k8s.mydomain.com", custom_domain = true },
+  { pattern = "ghcr.mydomain.com", custom_domain = true },
+  { pattern = "cloudsmith.mydomain.com", custom_domain = true },
+]
 
+[env.production.vars]
+MODE = "production"
+CUSTOM_DOMAIN = "om00.com"
+TARGET_UPSTREAM = ""
+
+[env.staging]
+name = "cloudflare-docker-proxy-staging"
+route = { pattern = "docker-staging.om00.com", custom_domain = true }
 
