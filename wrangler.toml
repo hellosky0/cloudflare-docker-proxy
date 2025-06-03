@@ -47,7 +47,7 @@ main = "src/index.js"
 enabled = true
 
 
-[env.production]
+#[env.production]
 #name = "cloudflare-docker-proxy"
 #main = "src/index.js"
 routes = [
@@ -60,12 +60,12 @@ routes = [
   { pattern = "cloudsmith.om00.com", custom_domain = true },
 ]
 
-[env.production.vars]
+#[env.production.vars]
 MODE = "production"
 CUSTOM_DOMAIN = "om00.com"
 TARGET_UPSTREAM = ""
 
-[env.staging]
-name = "cloudflare-docker-proxy-staging"
-route = { pattern = "docker-staging.om00.com", custom_domain = true }
+#[env.staging]
+#name = "cloudflare-docker-proxy-staging"
+#route = { pattern = "docker-staging.om00.com", custom_domain = true }
 
